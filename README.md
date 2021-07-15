@@ -6,22 +6,47 @@ Duix.com is a PaaS platform to empower every company  through interactive digita
 
 ```shell
 # Install Duix
-npm i duix-js -S
+npm i duix-guiji -S
 ```
 
 ## Quickstart
 
 ```js
-import duix from 'duix';
+import DUIX from 'duix-guiji'
 
-const dh = duix.init(options);
-dh.ask('who are you?')
+const duix = new DUIX({
+    url: 'https://robot.guiji.ai/duix-cc/',
+    logger: 'error',
+    faceCache: {
+        duration: 'auto'
+    },
+    container: document.querySelector('.stage'),
+    robot: {
+        code: 'xxxxxxxxxxxxxxxx'
+    }
+})
+
+duix.on('load', () =>{
+    console.log('load')
+})
+
+duix.on('canplaythrough', function (e) {
+    console.log('canplaythrough')
+    duix.play()
+})
+
+duix.on('error', function (e) {
+    console.error('error', e)
+})
+
+duix.say('你好，我是硅基智能数字人，很高兴认识您。') // 用文字驱动数字人说话
+duix.say('https://duix.guiji.ai/nfs/ccm-file/0c710466e703224167ead95f1fa6ef58.wav', true) // 用音频文件驱动数字人说话
 ```
 
 ## Options
 
 | Name      | Type              | Description                                                  | Example                         |
-| :-------- | :---------------- | :----------------------------------------------------------- | ------------------------------- |
+| :-------- | :---------------- | :----------------------------------------------------------- | :------------------------------ |
 | token     | string            | Token for this session.                                      | 666886299769D83FB...            |
 | url       | string            | The URL to the region of the Duix platform.                  | https://api.us.guiji.ai         |
 | container | Element           | The digital human will be presented in this DOM.             | document.querySelector('#duix') |
