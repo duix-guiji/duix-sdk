@@ -134,6 +134,16 @@ duix.say('https://duix.guiji.ai/nfs/ccm-file/0c710466e703224167ead95f1fa6ef58.wa
 
 ### 版本记录：
 
+0.0.38
+
+1. 修复偶现的调用say方法后，加载卡住，不能播放的bug。
+2. 新增功能。当options.body.autoplay=false时，调用say不自动播放静默。
+
+0.0.37
+
+1. 新增 getCanvas() 方法。
+2. 新增 getAudioContext() 方法。
+
 0.0.36
 
 1. 修改启动方式,现在以ip形式系统 手机上可以正常访问测试
