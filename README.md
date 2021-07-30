@@ -37,8 +37,11 @@ duix.on('error', function (e) {
     console.error('error', e)
 })
 
-duix.say('你好，我是硅基智能数字人，很高兴认识您。') // 用文字驱动数字人说话
-duix.say('https://duix.guiji.ai/nfs/ccm-file/0c710466e703224167ead95f1fa6ef58.wav', true) // 用音频文件驱动数字人说话
+duix.on('bodyload', function (e) {
+    duix.say('你好，我是硅基智能数字人，很高兴认识您。') // 用文字驱动数字人说话
+	// duix.say('https://duix.guiji.ai/nfs/ccm-file/0c710466e703224167ead95f1fa6ef58.wav', true) // 用音频文件驱动数字人说话
+})
+
 ```
 
 ## 选项
@@ -90,7 +93,11 @@ duix.say('https://duix.guiji.ai/nfs/ccm-file/0c710466e703224167ead95f1fa6ef58.wa
 
 #### pause()
 
-暂停数字人。此时数字人不说话，画面切换成静默视频。
+暂停数字人。暂停后数字人不说话，画面切换成静默视频。
+
+#### resume()
+
+由暂停恢复播放。
 
 #### stop（）
 
@@ -133,6 +140,13 @@ duix.say('https://duix.guiji.ai/nfs/ccm-file/0c710466e703224167ead95f1fa6ef58.wa
 | error          | DUIX异常。                                                   |
 
 ### 版本记录：
+
+0.0.39
+
+1. 新增暂停(pause)，恢复(resume)方法。
+2. 修复偶现的吞字现象。
+3. 播放结束不再触发puase事件，只触发ended 事件。
+4. 新增功能，页面不可见时暂停画面和声音，恢复可见时继续播放。
 
 0.0.38
 
