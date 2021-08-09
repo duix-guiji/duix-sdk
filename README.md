@@ -140,6 +140,27 @@ duix.on('bodyload', function (e) {
 | error          | DUIX异常。                                                   |
 
 ### 版本记录：
+0.0.44
+1.修复本地流canvas流，无法推流现象
+
+0.0.43
+1.新增从AudioContext获取MediaStream的方法getAudioDest
+
+0.0.42
+1. Request.js => getArrayBuffer 添加主动断开请求的方法
+2. DigitalHuman.js => _sayVoice 添加判断网络取消时的return
+3. DigitalHuman.js => stop 添加cancel方法 防止stop后网络请求才成功导致stop失败
+
+0.0.41
+1. Request.js 添加axios超时时间
+2. Request.js => getArrayBuffer 添加音频请求失败返回 &&
+DigitalHuman.js => _sayVoice 添加判断 音频请求失败时调用event &&
+DUIX.js => 添加新的事件 audioFailed 音频请求失败时event
+
+0.0.40
+
+1. 修复bug DigitalHuman.js line:166 & 169 事件名错误导致wsClose wsError不触发的bug
+2. 修改webpack配置 默认输出一次sdk版本 方便开发和生产环境的调试
 
 0.0.39
 
