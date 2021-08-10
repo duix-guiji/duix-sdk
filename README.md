@@ -140,9 +140,6 @@ duix.on('bodyload', function (e) {
 | error          | DUIX异常。                                                   |
 
 ### 版本记录：
-0.0.44
-1.修复本地流canvas流，无法推流现象
-
 0.0.43
 1.新增从AudioContext获取MediaStream的方法getAudioDest
 
