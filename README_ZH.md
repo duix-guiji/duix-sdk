@@ -69,7 +69,6 @@ const init = token => {
 | container          | Element         | 数字人将渲染在这个Dom中，并占宽高均占满容器。                |       | document.querySelector('#duix')          |
 | logger             | boolean\|string | 日志等级。可选值 false\|'debug'\|'info'\|'warn'\|'error'        | false  | false                           |
 | url                | string          | 服务器URL，您从DUIX后台获取到的服务URL.                            |        | https://api.us.guiji.ai        |
-| openIm             | boolean         | 是否开启Im通讯.                                                 |        |                                |
 | faceCache          | object          | 缓冲相关配置                                                    |        |                                |
 | faceCache.duration | number          | 缓冲时长，单位秒。在CPU稍差的机器上可以适当增加缓冲。当缓冲加满以后会触发`canplaythrough`事件。 | 1      |            |
 | robot              | object          | 数字人相关配置                                                  |        |                                 |
